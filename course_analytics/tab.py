@@ -1,6 +1,7 @@
 from lms.djangoapps.courseware.tabs import CourseTab
 from django.utils.translation import ugettext_noop
 
+
 class CourseAnalyticsTab(CourseTab):
     """A new course tab."""
 
@@ -15,7 +16,7 @@ class CourseAnalyticsTab(CourseTab):
     @classmethod
     def is_enabled(cls, course, user=None):
         """Returns true if this tab is enabled."""
-        return bool(user and user.is_authenticated and user.has_perm(permissions.VIEW_DASHBOARD, course.id))
+        return bool(user and user.is_authenticated)
         #return True
 
     @classmethod
